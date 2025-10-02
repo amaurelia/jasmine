@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte de Cobertura - Jasmine Lab</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .coverage-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .coverage-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .progress-custom {
+            height: 30px;
+            border-radius: 15px;
+        }
+        .coverage-high { background-color: #28a745; }
+        .coverage-medium { background-color: #ffc107; }
+        .coverage-low { background-color: #dc3545; }
+        .instruction-box {
+            background: linear-gradient(135deg, #007bff, #6f42c1);
+            color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="coverage-container">
+        <div class="instruction-box">
+            <h2><i class="fas fa-chart-line"></i> Reporte de Cobertura de Código</h2>
+            <p class="mb-0">Esta página muestra cómo generar reportes de cobertura para tus pruebas unitarias. 
+            Sigue las instrucciones abajo para generar el reporte real.</p>
+        </div>
+
+        <div class="coverage-card">
+            <div class="card-header bg-primary text-white">
+                <h4><i class="fas fa-terminal"></i> Instrucciones para Generar Cobertura</h4>
+            </div>
+            <div class="card-body">
+                <h5>Paso 1: Instalar Dependencias</h5>
+                <div class="bg-dark text-light p-3 rounded mb-3">
+                    <code>npm install</code>
+                </div>
+
+                <h5>Paso 2: Ejecutar Pruebas con Cobertura</h5>
+                <div class="bg-dark text-light p-3 rounded mb-3">
+                    <code>npm run coverage</code>
+                </div>
+
+                <h5>Paso 3: Generar Reporte HTML</h5>
+                <div class="bg-dark text-light p-3 rounded mb-3">
+                    <code>npm run coverage-report</code>
+                </div>
+
+                <div class="alert alert-info">
+                    <i class="fas fa-info-circle"></i>
+                    <strong>Nota:</strong> El reporte HTML se generará en la carpeta <code>coverage/</code>
+                </div>
+            </div>
+        </div>
+
+        <div class="coverage-card">
+            <div class="card-header bg-success text-white">
+                <h4><i class="fas fa-chart-bar"></i> Ejemplo de Métricas de Cobertura</h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <h6>Cobertura de Líneas (Lines)</h6>
+                        <div class="progress progress-custom">
+                            <div class="progress-bar coverage-high" style="width: 95%">95%</div>
+                        </div>
+                        <small class="text-muted">Porcentaje de líneas ejecutadas por las pruebas</small>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <h6>Cobertura de Funciones (Functions)</h6>
+                        <div class="progress progress-custom">
+                            <div class="progress-bar coverage-high" style="width: 90%">90%</div>
+                        </div>
+                        <small class="text-muted">Porcentaje de funciones ejecutadas por las pruebas</small>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <h6>Cobertura de Ramas (Branches)</h6>
+                        <div class="progress progress-custom">
+                            <div class="progress-bar coverage-medium" style="width: 85%">85%</div>
+                        </div>
+                        <small class="text-muted">Porcentaje de ramas condicionales ejecutadas</small>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <h6>Cobertura de Declaraciones (Statements)</h6>
+                        <div class="progress progress-custom">
+                            <div class="progress-bar coverage-high" style="width: 93%">93%</div>
+                        </div>
+                        <small class="text-muted">Porcentaje de declaraciones ejecutadas</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="coverage-card">
+            <div class="card-header bg-warning text-dark">
+                <h4><i class="fas fa-lightbulb"></i> ¿Qué Significan las Métricas?</h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6><span class="badge bg-primary">Lines Coverage</span></h6>
+                        <p>Mide qué porcentaje de líneas de código fueron ejecutadas durante las pruebas.</p>
+                        
+                        <h6><span class="badge bg-success">Functions Coverage</span></h6>
+                        <p>Indica qué porcentaje de funciones fueron llamadas durante las pruebas.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h6><span class="badge bg-info">Branches Coverage</span></h6>
+                        <p>Mide si se probaron todas las ramas de las estructuras condicionales (if/else).</p>
+                        
+                        <h6><span class="badge bg-secondary">Statements Coverage</span></h6>
+                        <p>Porcentaje de declaraciones de código que fueron ejecutadas.</p>
+                    </div>
+                </div>
+
+                <div class="alert alert-success mt-3">
+                    <h6><i class="fas fa-target"></i> Objetivos de Cobertura Recomendados:</h6>
+                    <ul class="mb-0">
+                        <li><strong>80-90%:</strong> Cobertura excelente para la mayoría de proyectos</li>
+                        <li><strong>70-80%:</strong> Cobertura buena, aceptable para desarrollo</li>
+                        <li><strong>60-70%:</strong> Cobertura básica, necesita mejorar</li>
+                        <li><strong>&lt;60%:</strong> Cobertura insuficiente, alto riesgo</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="coverage-card">
+            <div class="card-header bg-info text-white">
+                <h4><i class="fas fa-book"></i> Recursos Adicionales</h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>Herramientas de Cobertura:</h6>
+                        <ul>
+                            <li><strong>NYC/Istanbul:</strong> Para JavaScript/Node.js</li>
+                            <li><strong>Karma:</strong> Para pruebas en navegador</li>
+                            <li><strong>Jest:</strong> Framework todo-en-uno</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>Comandos Útiles:</h6>
+                        <ul>
+                            <li><code>npm test</code> - Ejecutar solo pruebas</li>
+                            <li><code>npm run coverage</code> - Pruebas + cobertura</li>
+                            <li><code>npm start</code> - Servidor local</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="index.html" class="btn btn-primary btn-lg">
+                <i class="fas fa-arrow-left"></i> Volver a las Pruebas
+            </a>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>

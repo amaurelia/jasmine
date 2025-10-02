@@ -1,0 +1,60 @@
+{
+  "name": "jasmine-testing-lab",
+  "version": "1.0.0",
+  "description": "Laboratorio de pruebas unitarias con Jasmine para estudiantes de desarrollo web",
+  "main": "index.html",
+  "scripts": {
+    "test": "jasmine",
+    "test-browser": "live-server --port=8080 --open=/index.html",
+    "coverage": "nyc jasmine",
+    "coverage-report": "nyc report --reporter=html --reporter=text",
+    "start": "live-server --port=8080 --open=/index.html",
+    "serve": "http-server -p 8080 -o"
+  },
+  "keywords": [
+    "jasmine",
+    "testing",
+    "unit-tests",
+    "javascript",
+    "education",
+    "web-development"
+  ],
+  "author": "Profesor de Desarrollo Web",
+  "license": "MIT",
+  "devDependencies": {
+    "jasmine": "^5.1.0",
+    "nyc": "^15.1.0",
+    "live-server": "^1.2.2",
+    "http-server": "^14.1.1"
+  },
+  "nyc": {
+    "include": [
+      "funciones.js"
+    ],
+    "exclude": [
+      "spec.js",
+      "node_modules/**",
+      "coverage/**"
+    ],
+    "reporter": [
+      "text",
+      "html",
+      "lcov"
+    ],
+    "report-dir": "./coverage",
+    "check-coverage": true,
+    "lines": 80,
+    "functions": 80,
+    "branches": 80,
+    "statements": 80
+  },
+  "jasmine": {
+    "spec_dir": ".",
+    "spec_files": [
+      "spec.js"
+    ],
+    "helpers": [
+      "funciones.js"
+    ]
+  }
+}
