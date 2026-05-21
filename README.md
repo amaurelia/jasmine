@@ -88,6 +88,36 @@ npm run coverage
 npm run coverage-report
 ```
 
+## 📊 Cobertura de Código
+
+Este proyecto utiliza **NYC (Istanbul)** para generar reportes de cobertura de código. 
+
+### Targets de Cobertura
+- **Líneas:** 80%
+- **Funciones:** 80%
+- **Ramas:** 80%  
+- **Declaraciones:** 80%
+
+Verifica el reporte en `coverage/index.html` después de ejecutar `npm run coverage-report`.
+
+## 🤝 Contribuyendo
+
+Las contribuciones son bienvenidas. Por favor:
+
+1. Fork el proyecto
+2. Crea tu rama de feature (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
+
+## 📝 Changelog
+
+### Versión 1.0.0 (2024)
+- ✅ Versión inicial del laboratorio
+- ✅ Ejemplos básicos de testing
+- ✅ Guía educativa completa
+- ✅ Configuración de cobertura
+
 ## 📚 Conceptos Clave
 
 ### 1. **Describe** - Agrupa pruebas relacionadas
