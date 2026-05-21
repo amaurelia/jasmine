@@ -81,6 +81,60 @@ function esPar(numero) {
 }
 
 /**
+ * Verifica si un número es primo
+ * @param {number} numero - El número a verificar
+ * @returns {boolean} true si es primo, false en caso contrario
+ */
+function esPrimo(numero) {
+    if (typeof numero !== 'number' || numero < 0) {
+        throw new Error('El parámetro debe ser un número positivo');
+    }
+    if (numero <= 1) return false;
+    if (numero <= 3) return true;
+    if (numero % 2 === 0 || numero % 3 === 0) return false;
+    
+    for (let i = 5; i * i <= numero; i += 6) {
+        if (numero % i === 0 || numero % (i + 2) === 0) return false;
+    }
+    return true;
+}
+
+/**
+ * Calcula el máximo común divisor
+ * @param {number} a - Primer número
+ * @param {number} b - Segundo número
+ * @returns {number} El MCD de a y b
+ */
+function mcd(a, b) {
+    if (typeof a !== 'number' || typeof b !== 'number') {
+        throw new Error('Los parámetros deben ser números');
+    }
+    a = Math.abs(a);
+    b = Math.abs(b);
+    
+    while (b !== 0) {
+        let temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+/**
+ * Calcula el mínimo común múltiplo
+ * @param {number} a - Primer número
+ * @param {number} b - Segundo número
+ * @returns {number} El MCM de a y b
+ */
+function mcm(a, b) {
+    if (typeof a !== 'number' || typeof b !== 'number') {
+        throw new Error('Los parámetros deben ser números');
+    }
+    return Math.abs(a * b) / mcd(a, b);
+}
+}
+
+/**
  * Formatea un nombre (primera letra en mayúscula, resto en minúscula)
  * @param {string} nombre - El nombre a formatear
  * @returns {string} El nombre formateado

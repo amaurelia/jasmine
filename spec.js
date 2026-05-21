@@ -397,3 +397,54 @@ describe('Pruebas Asíncronas (Ejemplo)', function() {
         expect(objeto.metodo).toHaveBeenCalled();
     });
 });
+
+// ========================================
+// PRUEBAS PARA FUNCIONES AVANZADAS
+// ========================================
+
+describe('Funciones Avanzadas de Matemáticas', function() {
+    
+    describe('función esPrimo()', function() {
+        it('debe identificar números primos correctamente', function() {
+            expect(esPrimo(2)).toBe(true);
+            expect(esPrimo(3)).toBe(true);
+            expect(esPrimo(5)).toBe(true);
+            expect(esPrimo(7)).toBe(true);
+            expect(esPrimo(11)).toBe(true);
+        });
+        
+        it('debe identificar números no primos', function() {
+            expect(esPrimo(0)).toBe(false);
+            expect(esPrimo(1)).toBe(false);
+            expect(esPrimo(4)).toBe(false);
+            expect(esPrimo(6)).toBe(false);
+            expect(esPrimo(9)).toBe(false);
+        });
+    });
+    
+    describe('función mcd() - Máximo Común Divisor', function() {
+        it('debe calcular el MCD de dos números positivos', function() {
+            expect(mcd(12, 8)).toBe(4);
+            expect(mcd(15, 10)).toBe(5);
+            expect(mcd(21, 14)).toBe(7);
+        });
+        
+        it('debe manejar números negativos', function() {
+            expect(mcd(-12, 8)).toBe(4);
+            expect(mcd(12, -8)).toBe(4);
+        });
+    });
+    
+    describe('función mcm() - Mínimo Común Múltiplo', function() {
+        it('debe calcular el MCM de dos números', function() {
+            expect(mcm(4, 6)).toBe(12);
+            expect(mcm(3, 5)).toBe(15);
+            expect(mcm(12, 18)).toBe(36);
+        });
+        
+        it('debe manejar números negativos', function() {
+            expect(mcm(-4, 6)).toBe(12);
+            expect(mcm(4, -6)).toBe(12);
+        });
+    });
+});
