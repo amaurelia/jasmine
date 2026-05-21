@@ -8,8 +8,10 @@
     "test-browser": "live-server --port=8080 --open=/index.html",
     "coverage": "nyc jasmine",
     "coverage-report": "nyc report --reporter=html --reporter=text",
+    "coverage-check": "nyc check-coverage",
     "start": "live-server --port=8080 --open=/index.html",
-    "serve": "http-server -p 8080 -o"
+    "serve": "http-server -p 8080 -o",
+    "lint": "echo 'No linter configured yet'"
   },
   "keywords": [
     "jasmine",
