@@ -1,0 +1,234 @@
+<!-- Guía de Cobertura de Código Mejorada -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Completa de Cobertura de Código - Jasmine Testing Lab</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        
+        h1 {
+            color: #667eea;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            color: #764ba2;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        
+        h3 {
+            color: #667eea;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .coverage-metric {
+            background: #f8f9fa;
+            padding: 20px;
+            border-left: 4px solid #667eea;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .metric-title {
+            font-weight: bold;
+            color: #764ba2;
+            font-size: 1.1em;
+        }
+        
+        .metric-value {
+            font-size: 1.3em;
+            color: #667eea;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        
+        .progress-bar {
+            background: #e9ecef;
+            height: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transition: width 0.3s ease;
+        }
+        
+        .example {
+            background: #f0f4ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            border-left: 3px solid #667eea;
+        }
+        
+        code {
+            background: #2d3748;
+            color: #68d391;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e9ecef;
+            text-align: center;
+            color: #999;
+        }
+        
+        .success {
+            color: #28a745;
+        }
+        
+        .warning {
+            color: #ffc107;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Guía de Cobertura de Código</h1>
+        
+        <p>La cobertura de código es una métrica que mide qué porcentaje de tu código es ejecutado durante las pruebas. Este proyecto mantiene altos estándares de cobertura.</p>
+        
+        <h2>🎯 Objetivos de Cobertura</h2>
+        
+        <div class="coverage-metric">
+            <div class="metric-title">Líneas de Código</div>
+            <div class="metric-value">80%</div>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 80%"></div>
+            </div>
+            <p>Porcentaje mínimo de líneas ejecutadas durante las pruebas.</p>
+        </div>
+        
+        <div class="coverage-metric">
+            <div class="metric-title">Funciones</div>
+            <div class="metric-value">80%</div>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 80%"></div>
+            </div>
+            <p>Porcentaje mínimo de funciones que deben ser llamadas en pruebas.</p>
+        </div>
+        
+        <div class="coverage-metric">
+            <div class="metric-title">Ramas (Condicionales)</div>
+            <div class="metric-value">80%</div>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 80%"></div>
+            </div>
+            <p>Porcentaje mínimo de rutas lógicas (if/else) que deben ejecutarse.</p>
+        </div>
+        
+        <div class="coverage-metric">
+            <div class="metric-title">Declaraciones</div>
+            <div class="metric-value">80%</div>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 80%"></div>
+            </div>
+            <p>Porcentaje mínimo de sentencias ejecutadas.</p>
+        </div>
+        
+        <h2>🔍 Tipos de Cobertura</h2>
+        
+        <h3>1. Cobertura de Líneas</h3>
+        <p>Mide cuántas líneas de código se ejecutan. Cada línea debe ser ejecutada al menos una vez.</p>
+        <div class="example">
+            <strong>Ejemplo:</strong><br>
+            <code>function suma(a, b) { return a + b; }</code><br>
+            Cobertura completa = la función se llama al menos una vez.
+        </div>
+        
+        <h3>2. Cobertura de Funciones</h3>
+        <p>Verifica que cada función sea llamada durante las pruebas.</p>
+        
+        <h3>3. Cobertura de Ramas</h3>
+        <p>Garantiza que todas las rutas condicionales (if/else, switch) se ejecuten.</p>
+        <div class="example">
+            <strong>Ejemplo:</strong><br>
+            <code>if (x > 0) { ... } else { ... }</code><br>
+            Necesitas pruebas para ambas condiciones: true y false.
+        </div>
+        
+        <h3>4. Cobertura de Declaraciones</h3>
+        <p>Similar a cobertura de líneas, pero más específica a instrucciones individuales.</p>
+        
+        <h2>📈 Cómo Verificar la Cobertura</h2>
+        
+        <h3>Generar Reporte de Cobertura</h3>
+        <pre><code>npm run coverage-report</code></pre>
+        
+        <h3>Revisar Resultados en HTML</h3>
+        <p>Se generará un archivo en <code>coverage/index.html</code> que puedes abrir en tu navegador.</p>
+        
+        <h3>Verificar en Terminal</h3>
+        <pre><code>npm run coverage-check</code></pre>
+        
+        <h2>✅ Mejores Prácticas</h2>
+        
+        <ul>
+            <li>Siempre prueba tanto casos exitosos como casos de error</li>
+            <li>Prueba todas las ramas condicionales</li>
+            <li>Utiliza pruebas de valores límite (edge cases)</li>
+            <li>Mantén la cobertura por encima del 80%</li>
+            <li>Revisa regularmente el reporte de cobertura</li>
+            <li>No busques 100%, busca significado en las pruebas</li>
+        </ul>
+        
+        <h2>🚀 Mejorando la Cobertura</h2>
+        
+        <ol>
+            <li>Revisa el reporte HTML de cobertura</li>
+            <li>Identifica líneas/funciones no cubiertas (líneas rojas)</li>
+            <li>Escribe nuevas pruebas para esas áreas</li>
+            <li>Ejecuta cobertura nuevamente hasta alcanzar el objetivo</li>
+            <li>Commit cuando alcances el target</li>
+        </ol>
+        
+        <div class="footer">
+            <p>📚 Jasmine Testing Lab - Aprende testing unitario de forma práctica</p>
+        </div>
+    </div>
+</body>
+</html>
