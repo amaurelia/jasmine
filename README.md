@@ -110,6 +110,12 @@ Las contribuciones son bienvenidas. Por favor:
 4. Push a la rama (`git push origin feature/AmazingFeature`)
 5. Abre un Pull Request
 
+## 📞 Contacto y Soporte
+
+- 📧 Email: soporte@jasminetesting.dev
+- 🐛 Issues: [GitHub Issues](https://github.com/tu-repo/jasmine-testing-lab/issues)
+- 💬 Discussions: Abierto para preguntas y sugerencias
+
 ## 📝 Changelog
 
 ### Versión 1.0.0 (2024)
